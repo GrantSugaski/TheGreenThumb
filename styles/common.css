@@ -1,14 +1,39 @@
+/* UNIVERSAL STYLES */
 body {
 	margin: 0;
 	padding: 0;
 }
 
+input[type=text], input[type=email], input[type=password], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+  
+button[type=submit] {
+	width: 100%;
+	background-color: #04AA6D;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* NAVBAR */
+
 .navbar {
-	background-color: #999;
+	background-color: #AAB;
 	height: 30px;
 	width: 100%;
 }
-.navbar > a {
+.navbar > a, .navbar > a:visited, .navbar > a:focus {
+	color: #000;
 	height: 30px;
 	line-height: 30px;
 	padding: 5px;
@@ -16,5 +41,36 @@ body {
 	vertical-align: middle;
 }
 .navbar > a:hover {
-	background-color: #AAA;
+	background-color: #BBD;
+}
+
+.error-msg {
+	background-color: #C77;
+}
+.info-msg {
+	background-color: #1A6;
+}
+.error-msg, .info-msg {
+	border-radius: 5px;
+	height: 30px;
+	left: 50%;
+	margin-left: -40%;
+	margin-top: 2%;
+	padding: 10px 20px;
+	position: absolute;
+	width: 80%;
+	vertical-align: middle;
+}
+
+/* FORMS */
+.login-form, .register-form, .account-form {
+	background-color: #AAB;
+	padding: 15px 20px;
+	border-radius: 5px;
+	left: 50%;
+	margin-top: 5%;
+	margin-left: -40%;
+	position: absolute;
+	width: 80%;
+   	vertical-align: middle;
 }
