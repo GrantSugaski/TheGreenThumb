@@ -62,6 +62,27 @@ function createUser($db, $email, $password, $firstName, $lastName, $address1, $a
     }
 }
 
+function getUser($db, $token) {
+    // Get UID
+    $sql = "select UID from UserAuthentication where SessionToken = :bind_token";
+    $stmt = $db->prepare($sql);
+    $stmt->bindparam(':bind_token', $token);
+
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    $uid = $result[0]['UID'];
+
+    // Get user
+    $sql = "select Email, FirstName, LastName, Address1, Address2, County, State, ZipCode from Users where UID = ".$uid.";";
+    $stmt = $db->prepare($sql);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    return $result;
+}
+
 function updateUser($db, $email, $password, $firstName, $lastName, $address1, $address2, $county, $state, $zipcode) {
     // Get UID
     $sql = "select UID from UserAuthentication where SessionToken = :bind_token";

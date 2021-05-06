@@ -19,4 +19,16 @@ if (isset($_POST['request']) && $_POST['request'] == "Update") {
     }
 }
 
+if (isset($_GET['request']) && $_GET['request'] == 'GetUser') {
+    try {
+        $db = new DatabaseAdaptor();
+
+        $user = getUser($db->db, $_SESSION['AUTH_TOKEN']);
+
+        echo json_encode($user);
+    } catch (Exception $ex) {
+        $_SESSION['SESSION_ERROR'] = "Failed to get user information on internal exception.";
+    }
+}
+
 ?>
