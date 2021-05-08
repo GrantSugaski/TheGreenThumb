@@ -4,27 +4,6 @@ body {
 	padding: 0;
 }
 
-input[type=text], input[type=email], input[type=password], select {
-	width: 100%;
-	padding: 12px 20px;
-	margin: 8px 0;
-	display: inline-block;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-}
-  
-button[type=submit] {
-	width: 100%;
-	background-color: #04AA6D;
-	color: white;
-	padding: 14px 20px;
-	margin: 8px 0;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-}
-
 /* NAVBAR */
 
 .navbar {
@@ -65,12 +44,67 @@ button[type=submit] {
 /* FORMS */
 .login-form, .register-form, .account-form {
 	background-color: #AAB;
-	padding: 15px 20px;
-	border-radius: 5px;
-	left: 50%;
-	margin-top: 40px;
-	margin-left: -40%;
-	position: absolute;
-	width: 80%;
+	border-radius: 10px;
+	margin: 40px;
+	padding: 20px;
+	width: 100% - 40px;
    	vertical-align: middle;
+}
+
+.home-container {
+	background-color: #AAB;
+	border-radius: 10px;
+	height: 85%;
+	margin: 40px;
+	width: 100% - 40px;
+}
+
+.form > input[type=text], .form > input[type=email], .form > input[type=password], .form > select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+  
+.form > button[type=submit] {
+	width: 100%;
+	background-color: #04AA6D;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* MAP */
+#customerMap {
+	border-radius: 10px;
+	height: 40%;
+	margin: 20px;
+	top: 20px;
+}
+
+#customerSearchBar {
+	border-radius: 10px;
+	box-sizing: border-box;
+	display: inline-block;
+	margin-top: 20px;
+	margin-left: 20px;
+	padding: 5px 10px;
+	width: 30%;
+}
+
+#customerSearchTable {
+	background-color: #EEF;
+	border-radius: 10px;
+	display: block;
+	margin: 20px;
+}
+
+.header-row {
+	text-align: left;
 }

@@ -6,7 +6,7 @@
 	<body>
 		<?php include("navbar.php"); ?>
 
-		<form class="register-form" action="controller/registerController.php" method="post">
+		<form class="form register-form" action="controller/registerController.php" method="post">
 			<label for="email">Email</label>
 			<input type="email" name="email" placeholder="Email" required/>
 			

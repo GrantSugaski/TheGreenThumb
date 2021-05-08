@@ -6,7 +6,7 @@
 	<body onload="fillForm()">
 		<?php include("navbar.php"); ?>
 
-		<form class="account-form" action="controller/accountController.php" method="post">
+		<form class="form account-form" action="controller/accountController.php" method="post">
 			<label for="email">Email</label>
 			<input type="email" name="email" placeholder="Email" />
 			
@@ -45,8 +45,6 @@
 			ajax.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
 					var user = JSON.parse(this.responseText);
-
-					console.log(user[0]);
 
 					document.getElementsByName("email")[0].value = user[0]["Email"];
 					document.getElementsByName("firstName")[0].value = user[0]["FirstName"];

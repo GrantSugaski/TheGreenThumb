@@ -13,11 +13,7 @@ if (isset($_POST['request']) && $_POST['request'] == "Register") {
 
         $_SESSION['SESSION_INFO'] = "Succesfully registered account";
 
-        if (isset($_SESSION['SESSION_ERROR'])) {
-            header("Location: ../register.php");
-        } else {
-            header("Location: ../index.php");
-        }
+        header("Location: ../register.php");
     } catch (Exception $ex) {
         $_SESSION['SESSION_ERROR'] = "Failed to register on internal exception.";
     }
