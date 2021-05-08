@@ -14,15 +14,17 @@
 			<table id="customerSearchTable">
 				<tr class="header-row">
 					<th style="width: 20%;">Farmer</th>
-					<th style="width: 40%;">Address</th>
+					<th style="width: 35%;">Address</th>
 					<th style="width: 35%;">Produce</th>
-					<th style="width: 5%;">Options</th>
+					<th style="width: 10%;">Options</th>
 				</tr>
 			</table>
 		</div>
 
 		<script>
 			var customerMap;
+			var markers = {};
+
 			function initMap() {
 				customerMap = new google.maps.Map(document.getElementById("customerMap"), {
 					zoom: 7,
@@ -59,6 +61,7 @@
 
 							var cell4 = row.insertCell(3);
 							cell4.innerHTML = "<button type='submit' onclick='displayAddress(\"" + address + "\")'>Display</button>";
+							cell4.innerHTML += "<button type='submit' onclick='removeAddress(\"" + address + "\")'>Remove</button>";
 						}
 					}
 				}
@@ -72,7 +75,7 @@
 				geocoder.geocode({ address: address }, (results, status) => {
 					if (status === "OK") {
 						customerMap.setCenter(results[0].geometry.location);
-						new google.maps.Marker({
+						markers[address] = new google.maps.Marker({
 							map: customerMap,
 							position: results[0].geometry.location,
 						});
@@ -82,6 +85,11 @@
 						);
 					}
 				});
+			}
+
+			function removeAddress(address) {
+				markers[address].setMap(null);
+				delete markers[address];
 			}
 
 			function filter() {
