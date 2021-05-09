@@ -3,7 +3,11 @@
 session_start();
 
 if (isset($_SESSION['AUTH_TOKEN'])) {
-	header("Location: home.php");
+	if ($_SESSION['AUTH_ROLE'] == "Customer") {
+		header("Location: customerHome.php");
+	} else if ($_SESSION['AUTH_ROLE'] = "Producer") {
+		header("Location: producerHome.php");
+	}
 } else {
 	header("Location: login.php");
 }
